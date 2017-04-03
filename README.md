@@ -1,4 +1,4 @@
-# WintellectWebinars
+# Wintellect Webinars
 
 This repository contains the slide and sample code from teh various webinars offered by Wintellect. Each folder corresponds to the date and title of the webinar.
 
