@@ -34,13 +34,19 @@ def main():
     data = get_data()
 
     two_bed_100k_homes = (
-        (home.price, home.beds)
+        home
         for home in data
         if home.beds >= 2 and home.price > 100_000
     )
-    print(two_bed_100k_homes)
+
+    two_bed_tups = (
+        (h.price, h.beds)
+        for h in two_bed_100k_homes
+    )
+
+    print(two_bed_tups)
     count = 0
-    for p, b in two_bed_100k_homes:
+    for p, b in two_bed_tups:
         count += 1
         print(p, b)
         if count > 5:
