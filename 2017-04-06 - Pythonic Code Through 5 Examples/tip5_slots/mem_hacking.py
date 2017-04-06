@@ -55,9 +55,9 @@ data = []
 t0 = datetime.datetime.now()
 
 # Loop 1: Tuples
-print("tuple")
-for n in range(count):
-    data.append((1 + n, 2 + n, 3 + n, 4 + n))
+# print("tuple")
+# for n in range(count):
+#     data.append((1 + n, 2 + n, 3 + n, 4 + n))
 
 # # Loop 2: Named tuple
 # print("named tuple")
@@ -70,9 +70,9 @@ for n in range(count):
 #     data.append(MutableThing(1 + n, 2 + n, 3 + n, 4 + n))
 #
 # # Loop 4: Slot based immutable class
-# print("slot based class")
-# for n in range(count):
-#   data.append(ImmutableThing(1 + n, 2 + n, 3 + n, 4 + n))
+print("slot based class")
+for n in range(count):
+  data.append(ImmutableThing(1 + n, 2 + n, 3 + n, 4 + n))
 
 t1 = datetime.datetime.now()
 
@@ -83,10 +83,10 @@ input("Finished, waiting... done in {:,} s with mem usage: {:,.2f} MB".format(
 # Sample output on OS X + Python 3.6.1
 # Hardware: Macbook Pro 2013 edition
 
-# straight tuple:  207 MB, 0.528455 s
-# named tuple:     215 MB, 1.519358 s
-# class (dynamic): 370 MB, 1.680248 s
-# slot class:      120 MB, 1.438989 s
+# straight tuple:  0.544589s with mem usage: 211.99 MB
+# named tuple:     1.643637 s with mem usage: 218.70 MB
+# class (dynamic): 1.586891 s with mem usage: 296.61 MB
+# slot class:      1.573864 s with mem usage: 203.74 MB
 
 
 # Interesting real-world story of benefits of slots:

@@ -4,11 +4,47 @@ import os
 from purchases import Purchase
 
 
+def fibonacci_blocking(limit):
+    nums = []
+    current, nxt = 0, 1
+    for _ in range(1, limit):
+        current, nxt = nxt, current + nxt
+        nums.append(current)
+
+    return nums
+
+
+def fibonacci():
+    current, nxt = 0, 1
+    while True:
+        current, nxt = nxt, current + nxt
+        yield current
+
+
 def main():
     # fibonacci
+    for n in fibonacci():
+        print(n, end=', ')
+        if n > 100:
+            break
+    print()
 
     # list style
     # generator style
+    data = get_data()
+
+    two_bed_100k_homes = (
+        (home.price, home.beds)
+        for home in data
+        if home.beds >= 2 and home.price > 100_000
+    )
+    print(two_bed_100k_homes)
+    count = 0
+    for p, b in two_bed_100k_homes:
+        count += 1
+        print(p, b)
+        if count > 5:
+            break
 
     # Find 2 bedroom houses over 100k
     # loop

@@ -11,7 +11,7 @@ def main():
 
     data_list = []  # 500,000 DataPoint items
     random.seed(0)
-    for d_id in range(500000):
+    for d_id in range(500_000):
         x = random.randint(0, 1000)
         y = random.randint(0, 1000)
         temp = random.randint(-10, 50)
@@ -19,7 +19,6 @@ def main():
         data_list.append(DataPoint(d_id, x, y, temp, quality))
 
     print("done.", flush=True)
-    sys.stdout.flush()
 
     # Reordering data for random access
     print("Reordering data for random access ...", end=' ', flush=True)
@@ -53,14 +52,24 @@ def main():
 
     # let's try this with a dictionary...
 
+    data_dict = {
+        item.id: item
+        for item in data_list
+    }
+    print(data_dict)
+
+    interesting_points.clear()
+
     t0 = datetime.datetime.now()
     # 1. Create dictionary via comprehension, key = id
 
-    interesting_points.clear()
+    # data_dict = {} # dict()
+    # for item in data_list:
+    #     data_dict[item.get('id')] = item
+
     for d_id in interesting_ids:
-        pass
-        # 2. locate the data in dictionary
-        # Add to interesting_points
+        item = data_dict.get(d_id)
+        interesting_points.append(item)
 
     t1 = datetime.datetime.now()
     dt_dict = (t1 - t0).total_seconds()
@@ -68,7 +77,7 @@ def main():
     print("done.", flush=True)
 
     print("dt: {} sec".format(dt_dict))
-    print(interesting_points)
+    # print(interesting_points)
     print()
     print("Speedup from dict: {:,.0f}x".format(round(dt_list / dt_dict)))
 
