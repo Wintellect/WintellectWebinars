@@ -1,0 +1,3 @@
+[run]
+source = wintellect_demo
+omit = wintellect_demo/test*
