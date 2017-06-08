@@ -1,4 +1,4 @@
-# ASP.NET with Docker
+# ASP.NET Core with Docker
 
 ASP.NET Core offers the exciting ability to develop, test, and deploy on different platforms. In this webinar, we look at how to use Docker to create a consistent testing and deployment target for ASP.NET Core applications. We also talk about deployment to Microsoft Azure and AWS.
 
