@@ -1,0 +1,15 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.DS_Store": true,
+        "node_modules/": false,
+        "dist/": false,
+        "reports/": true,
+        ".vscode/": true
+    },
+     "editor.tabSize": 4,
+     "editor.insertSpaces": true,
+     "editor.wordWrapColumn": 120
+}

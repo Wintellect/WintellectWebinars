@@ -1,0 +1,19 @@
+{
+	"compileOnSave": false,
+    "compilerOptions": {
+		"target": "es5",
+		"module": "es2015",
+		"moduleResolution": "node",
+        "lib": [ "es2017", "dom" ],
+        "typeRoots": [ "node_modules/@types" ],        
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"noImplicitAny": true,
+		"suppressImplicitAnyIndexErrors": true,
+		"sourceMap": true
+	},
+    "files": [
+        "src/ts/app/app.module.ts",
+        "src/ts/main.ts"
+    ]       
+}
