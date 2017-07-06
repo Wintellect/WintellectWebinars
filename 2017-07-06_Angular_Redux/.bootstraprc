@@ -1,0 +1,10 @@
+loglevel: disabled
+bootstrapVersion: 3
+styleLoaders:
+  - style
+  - css
+  - sass
+  - postcss
+extractStyles: false
+styles: true
+scripts: false
