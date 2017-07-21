@@ -1,0 +1,51 @@
+loglevel: disabled
+bootstrapVersion: 4
+styleLoaders:
+  - style-loader
+  - css-loader
+  - postcss-loader
+  - sass-loader
+extractStyles: false
+styles:
+  
+  # Mixins
+  mixins: true
+
+  # Reset and dependencies
+  normalize: true
+  print: true
+
+  # Core CSS
+  reboot: true
+  type: true
+  images: true
+  code: true
+  grid: true
+  tables: true
+  forms: true
+  buttons: true
+
+  # Components
+  transitions: true
+  dropdown: true
+  button-group: true
+  input-group: true
+  custom-forms: true
+  nav: true
+  navbar: true
+  card: true
+  breadcrumb: true
+  pagination: true
+  jumbotron: true
+  alert: true
+  progress: true
+  media: true
+  list-group: true
+  responsive-embed: true
+  close: true
+  badge: true
+
+  # Utility classes
+  utilities: true
+
+scripts: false
