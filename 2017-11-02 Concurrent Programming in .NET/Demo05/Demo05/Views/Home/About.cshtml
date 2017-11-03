@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<p><a asp-action="CurrencyRate" id="CurrencyLink">Get Currency Rate</a></p>
+<div id="CurrencyResponse"></div>
+
+@section Scripts
+{
+  <script>
+    $('#CurrencyLink').click(function (event) {
+      event.preventDefault();
+
+      $.ajax(this.href, {
+        success: function (data) {
+          $('#CurrencyResponse').html(data);
+        }
+      });
+    });
+  </script>
+}
