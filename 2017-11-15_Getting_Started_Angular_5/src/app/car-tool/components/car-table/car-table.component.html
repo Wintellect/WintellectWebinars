@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <tr>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Price</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td colspan="5" *ngIf="cars.length === 0">
+        No Data
+      </td>
+    </tr>
+    <tr *ngFor="let car of cars">
+      <td>{{car.make}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.year}}</td>
+      <td>{{car.color}}</td>
+      <td>{{car.price}}</td>
+      <td><button type="button" (click)="this.deleteCar.emit(car.id)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
