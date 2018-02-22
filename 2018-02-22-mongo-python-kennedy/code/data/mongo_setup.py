@@ -2,5 +2,4 @@ import mongoengine
 
 
 def global_init(db_name: str):
-    pass
-    # TODO: Implement
+    mongoengine.register_connection(alias='core', name=db_name)
