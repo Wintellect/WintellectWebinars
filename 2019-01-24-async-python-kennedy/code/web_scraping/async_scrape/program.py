@@ -1,17 +1,24 @@
+import asyncio
+
+import aiohttp
 import requests
 import bs4
 from colorama import Fore
 
+loop = asyncio.get_event_loop()
 
-def get_html(episode_number: int) -> str:
+
+async def get_html(episode_number: int) -> str:
     print(Fore.YELLOW + f"Getting HTML for episode {episode_number}", flush=True)
 
-    # TODO: Convert to aiohttp.ClientSession
     url = f'https://talkpython.fm/{episode_number}'
-    resp = requests.get(url)
-    resp.raise_for_status()
 
-    return resp.text
+    # resp = requests.get(url)
+    # resp.raise_for_status()
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as resp:
+            resp.raise_for_status()
+            return await resp.text()
 
 
 def get_title(html: str, episode_number: int) -> str:
@@ -25,17 +32,27 @@ def get_title(html: str, episode_number: int) -> str:
 
 
 def main():
-    # TODO: Create event loop
-    # TODO: run until completed get_title_range()
-    get_title_range()
+    loop.run_until_complete(get_title_range())
     print("Done.")
 
 
-# TODO: Two editions, first naive, then better
-def get_title_range():
+# async def get_title_range():
+# #     # Please keep this range pretty small to not DDoS my site. ;)
+# #     for n in range(180, 195):
+# #         html = await get_html(n)
+# #         title = get_title(html, n)
+# #         print(Fore.WHITE + f"Title found: {title}", flush=True)
+
+async def get_title_range():
     # Please keep this range pretty small to not DDoS my site. ;)
-    for n in range(180, 195):
-        html = get_html(n)
+
+    tasks = [
+        (n, loop.create_task(get_html(n)))
+        for n in range(180, 195)
+    ]
+
+    for n, t in tasks:
+        html = await t
         title = get_title(html, n)
         print(Fore.WHITE + f"Title found: {title}", flush=True)
 
