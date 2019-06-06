@@ -10,3 +10,7 @@ apt install python-certbot-nginx -y
 certbot --nginx -d billtrackerprodemo.com -d www.billtrackerprodemo.com
 
 service nginx restart
+
+
+# certbot --nginx -d testssl.talkpython.com
+# certbot renew --dry-run
