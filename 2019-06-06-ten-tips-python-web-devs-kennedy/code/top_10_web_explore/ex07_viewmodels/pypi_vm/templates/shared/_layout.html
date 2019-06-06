@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A demo web application for flask recreating pypi.org">
+    <meta name="author" content="Talk Python Training">
+    <link rel="shortcut icon" href='/static/img/favicon.png'>
+
+    {% block title %}
+        <title>Python Package Index (demo)</title>
+    {% endblock %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700,700italic|Source+Code+Pro:500">
+
+    <!-- Custom styles for this scaffold -->
+    <link href="/static/css/theme.css" rel="stylesheet">
+    <link href="/static/css/theme-overrides.css" rel="stylesheet">
+    <link href="/static/css/site.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"
+            integrity="sha384-0s5Pv64cNZJieYFkXYOTId2HMA2Lfb6q2nAcx2n0RTLUnCAoTTsS0nKEO27XyKcY"
+            crossorigin="anonymous"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"
+            integrity="sha384-f1r2UzjsxZ9T4V1f2zBO/evUqSEOpeaUUZcMTz1Up63bl4ruYnFYeM+BxI4NhyI0"
+            crossorigin="anonymous"></script>
+    <![endif]-->
+
+    {% block additional_css %}
+    {% endblock %}
+</head>
+<body>
+
+<div id="page-content">
+
+
+    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse navbar-expand-md">
+        <a class="navbar-brand" href="/"><img src="/static/img/pypi-logo.svg"/></a>
+
+        <button class="navbar-toggler navbar-toggle" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="navbar-toggler-icon">
+                <div class="nav-expand-line"></div>
+                <div class="nav-expand-line"></div>
+                <div class="nav-expand-line"></div>
+            </div>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Donate</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Help</a></li>
+                <li class="nav-item"><a class="nav-link" href="/account/login">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="/account/register" id="last_nav_link">Register</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="starter-template">
+        <div id="content">{% block content %}No content{% endblock %}</div>
+    </div>
+
+
+    <footer>
+        <div class="copyright">
+            This is a fake site built during a course.<br>
+            It's meant to model / simulate the real <a href="https://pypi.org">pypi.org</a><br>
+            <br>
+            Copyright &copy; <a href="https://training.talkpython.fm">Talk Python Training</a>.
+        </div>
+    </footer>
+
+</div>
+
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+
+{% block additional_js %}{% endblock %}
+</body>
+</html>
+

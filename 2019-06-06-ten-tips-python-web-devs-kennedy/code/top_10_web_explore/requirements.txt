@@ -1,0 +1,60 @@
+# Example 2: NGROK
+flask
+sqlalchemy
+
+######################################################
+#
+# Example 3: async core
+#
+bs4
+colorama
+
+aiohttp
+cchardet
+
+# This one can give you trouble on Windows
+# Feel free to uncomment it but it also works without it
+# Just a little less well.
+# aiodns
+
+
+######################################################
+#
+# Example 4: quart
+#
+quart
+
+# Calling services requirements
+aiohttp
+cchardet
+
+# This one can give you trouble on Windows
+# Feel free to uncomment it but it also works without it
+# Just a little less well.
+# aiodns
+
+######################################################
+#
+# Example 5: migrations
+#
+alembic
+progressbar2
+# aiodns
+
+######################################################
+#
+# Example 7: view models
+#
+flask
+passlib
+pytest
+
+######################################################
+#
+# Example 10: secure.py
+#
+flask
+secure
+
+
+
