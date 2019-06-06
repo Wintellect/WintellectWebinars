@@ -1,0 +1,16 @@
+{% extends "shared/_layout.html" %}
+{% block content %}
+
+    <div class="content account-home">
+        <h1>Account</h1>
+        <div>
+            Welcome to your account {{ user.name }}!
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block additional_css %}
+    <link href="/static/css/account.css" rel="stylesheet">
+{% endblock %}

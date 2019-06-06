@@ -1,0 +1,8 @@
+Run without warnings:
+
+-p no:warnings
+
+
+
+pytest /Users/mkennedy/github/talk-python/courses/data-driven-web/flask-materials/demo_apps/pypi/tests/_all_tests.py -p no:warnings
+pytest tests/_all_tests.py -p no:warnings
