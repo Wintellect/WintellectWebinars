@@ -17,5 +17,9 @@ class LoginViewModel(ViewModelBase):
             self.user = user_service.login_user(self.email, self.password)
 
     def validate(self):
-        if not self.user:
+        if not self.email:
+            self.error = "Your email is required."
+        elif not self.password:
+            self.error = 'Your password is empty.'
+        elif not self.user:
             self.error = 'The user could not found or the password is incorrect.'

@@ -34,10 +34,10 @@ def register_blueprints():
     app.register_blueprint(cms_views.blueprint)
 
 
-# @app.after_request
-# def set_secure_headers(response):
-#     secure_headers.flask(response)
-#     return response
+@app.after_request
+def set_secure_headers(response):
+    secure_headers.flask(response)
+    return response
 
 
 if __name__ == '__main__':

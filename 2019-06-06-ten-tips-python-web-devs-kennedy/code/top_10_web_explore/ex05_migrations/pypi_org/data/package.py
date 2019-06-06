@@ -19,6 +19,7 @@ class Package(SqlAlchemyBase):
     docs_url: str = sa.Column(sa.String)
     package_url: str = sa.Column(sa.String)
     other: str = sa.Column(sa.String)
+    other2: str = sa.Column(sa.String)
 
     author_name: str = sa.Column(sa.String)
     author_email: str = sa.Column(sa.String, index=True)

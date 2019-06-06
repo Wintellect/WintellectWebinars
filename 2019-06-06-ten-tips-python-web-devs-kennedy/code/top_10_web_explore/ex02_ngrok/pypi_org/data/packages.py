@@ -6,6 +6,7 @@ from pypi_org.data.modelbase import SqlAlchemyBase
 from pypi_org.data.releases import Release
 
 
+print(__file__)
 class Package(SqlAlchemyBase):
     __tablename__ = 'packages'
 
@@ -18,6 +19,7 @@ class Package(SqlAlchemyBase):
     home_page = sa.Column(sa.String, nullable=True)
     docs_url = sa.Column(sa.String, nullable=True)
     package_url = sa.Column(sa.String, nullable=True)
+    other_help_url: str = sa.Column(sa.String)
 
     author_name = sa.Column(sa.String, nullable=True)
     author_email = sa.Column(sa.String, nullable=True, index=True)
