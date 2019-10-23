@@ -1,0 +1,24 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Color</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let car of cars">
+      <tr class="view-car-row"
+        *ngIf="editCarId !== car.id"
+        [car]="car" (editCar)="doEdit($event)"
+        (deleteCar)="doDelete($event)" ></tr>
+      <tr class="edit-car-row"
+        *ngIf="editCarId === car.id"
+        [car]="car" (saveCar)="doSave($event)"
+        (cancelCar)="doCancel()" ></tr>
+    </ng-container>
+  </tbody>
+</table>

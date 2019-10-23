@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let car of cars">
+      <td>{{car.id}}</td>
+      <td>{{car.make}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.year}}</td>
+      <td><button type="button" (click)="viewCar.emit(car.id)">View</button></td>
+    </tr>
+  </tbody>
+</table>

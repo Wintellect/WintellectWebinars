@@ -1,0 +1,9 @@
+<tool-header headerText="Car Tool"></tool-header>
+
+<car-table [cars]="cars$ | async" [editCarId]="editCarId$ | async"
+  (editCar)="doEditCar($event)"
+  (deleteCar)="doDeleteCar($event)"
+  (saveCar)="doReplaceCar($event)"
+  (cancelCar)="doCancelCar()"></car-table>
+
+<car-form buttonText="Add Car" (submitCar)="doAppendCar($event)"></car-form>

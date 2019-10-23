@@ -1,0 +1,5 @@
+<div *ngIf="errorMessage$ | async">
+  {{errorMessage$ | async}}
+</div>
+<app-car-table [cars]="cars$ | async" (viewCar)="doViewCar($event)"></app-car-table>
+<button type="button" (click)="doRefreshCars()">Refresh Cars</button>
