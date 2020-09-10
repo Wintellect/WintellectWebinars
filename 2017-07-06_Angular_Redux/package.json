@@ -76,7 +76,7 @@
     "html-loader": "0.4.5",
     "html-webpack-plugin": "2.29.0",
     "json3": "3.3.2",
-    "node-sass": "4.5.3",
+    "node-sass": "4.14.1",
     "null-loader": "0.1.1",
     "postcss": "6.0.6",
     "postcss-import": "10.0.0",
